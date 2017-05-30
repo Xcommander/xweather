@@ -1,0 +1,3 @@
+一个json对象就是python中的字典{},
+gson其实就是将一个model和一个json对象对应起来
+一般如果value是一个字典的话，那么将model的名字命名为key的名字，这样对应起来，会好很多
