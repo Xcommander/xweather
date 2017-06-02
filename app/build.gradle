@@ -16,8 +16,8 @@ android {
 
     }
     compileOptions {
-        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_8
-        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -40,4 +40,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.3.1'
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
+    compile 'com.android.support:support-v4:25.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
 }

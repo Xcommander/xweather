@@ -1,10 +1,13 @@
 package com.example.xulinchao.xweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.xulinchao.xweather.db.City;
 import com.example.xulinchao.xweather.db.County;
 import com.example.xulinchao.xweather.db.Province;
+import com.example.xulinchao.xweather.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -91,6 +94,21 @@ public class Utility {
             }
         }
         return false;
+    }
+    /**
+     * 通过返回来json数据，处理成gson 的model对象并且返回
+     * **/
+    public static Weather handleWeatherResopnse(String data) {
+        try {
+            JSONObject jsonObject = new JSONObject(data);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String jsonContent = jsonArray.getString(0).toString();
+            return new Gson().fromJson(jsonContent, Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
 
